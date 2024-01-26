@@ -62,6 +62,7 @@ class Timeline extends Component {
       toggleTrackOpen,
       enableSticky = false,
       scrollToNow,
+      renderSubTrack,
     } = this.props
 
     const { time, timelineViewportWidth, sidebarWidth } = this.state
@@ -93,6 +94,7 @@ class Timeline extends Component {
           sidebarWidth={sidebarWidth}
           clickElement={clickElement}
           clickTrackButton={clickTrackButton}
+          renderSubTrack={renderSubTrack}
         />
       </div>
     )
@@ -100,6 +102,7 @@ class Timeline extends Component {
 }
 
 Timeline.propTypes = {
+  renderSubTrack: PropTypes.func,
   scale: PropTypes.shape({
     start: PropTypes.instanceOf(Date).isRequired,
     end: PropTypes.instanceOf(Date).isRequired,

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 
 import Track from './Track'
 
-const Tracks = ({ time, tracks, clickElement }) => (
+const Tracks = ({ time, tracks, clickElement, renderSubTrack }) => (
   <div className="rt-tracks">
     {tracks.map(({ id, elements, isOpen, components, tracks: children }) => (
       <>
-        <Track key={id} time={time} elements={elements} isOpen={isOpen} tracks={children} clickElement={clickElement} />
+        <Track key={id} time={time} elements={elements} isOpen={isOpen} tracks={children} clickElement={clickElement} renderSubTrack={renderSubTrack} />
         {components}
       </>
     ))}

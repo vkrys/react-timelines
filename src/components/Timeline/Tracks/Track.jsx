@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Tracks from '.'
 import Element from './Element'
 
-const Track = ({ time, elements, isOpen, tracks, clickElement }) => (
+const Track = ({ time, elements, isOpen, tracks, clickElement, renderSubTrack }) => (
   <div className="tr-track">
     <div className="rt-track__elements">
       {elements
@@ -13,6 +13,7 @@ const Track = ({ time, elements, isOpen, tracks, clickElement }) => (
           <Element key={element.id} time={time} clickElement={clickElement} {...element} />
         ))}
     </div>
+    {renderSubTrack({ time, elements, isOpen, tracks, clickElement })}
     {isOpen && tracks && tracks.length > 0 && <Tracks time={time} tracks={tracks} clickElement={clickElement} />}
   </div>
 )

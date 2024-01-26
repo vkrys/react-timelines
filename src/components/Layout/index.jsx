@@ -7,7 +7,7 @@ import { addListener, removeListener } from '../../utils/events'
 import raf from '../../utils/raf'
 import getNumericPropertyValue from '../../utils/getNumericPropertyValue'
 
-const noop = () => {}
+const noop = () => { }
 
 class Layout extends PureComponent {
   constructor(props) {
@@ -141,6 +141,7 @@ class Layout extends PureComponent {
       timelineViewportWidth,
       clickElement,
       clickTrackButton,
+      renderSubTrack,
     } = this.props
 
     const { isSticky, headerHeight, scrollLeft } = this.state
@@ -171,6 +172,7 @@ class Layout extends PureComponent {
                 scrollLeft,
               }}
               clickElement={clickElement}
+              renderSubTrack={renderSubTrack}
             />
           </div>
         </div>
